@@ -7,6 +7,6 @@ Main functionalities:
   - Downloading frames for which the CNN is very confident to match a facial expression, perfect for using in other clustering tasks involving facial expressions
 
 Technologies used:
-  -Python(Streamlit library for frontend, keras for training the AI model)
-  -FastAPI
-  -Docker
+  - Python(Streamlit library for frontend, keras for training the AI model)
+  - FastAPI
+  - Docker
