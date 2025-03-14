@@ -13,4 +13,4 @@ Technologies used:
 
 A demo of the app is available in "Emotional analysis tool demo.mkv"
 
-The project's structure can be seen in " "
+The project's structure can be seen in "ProjectArchitecture.png"
