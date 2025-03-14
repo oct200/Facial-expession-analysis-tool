@@ -1,0 +1,9 @@
+streamlit~=1.37.0
+httpx~=0.27.0
+streamlit_option_menu
+requests~=2.32.3
+bcrypt~=4.2.0
+opencv-python~=4.10.0.84
+pandas~=2.2.2
+plotly~=5.23.0
+numpy~=1.26.4
