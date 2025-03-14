@@ -11,5 +11,6 @@ Technologies used:
   - FastAPI
   - Docker
 
-A demo of the app is available in " "
+A demo of the app is available in "Emotional analysis tool demo.mkv"
+
 The project's structure can be seen in " "
