@@ -1,0 +1,61 @@
+services:
+  dataBaseAction:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./dataBaseActions
+    image: database_actions
+    ports:
+      - "8000:8000"
+    environment:
+      HOST: "172.16.55.81"
+    container_name: dataBaseAction
+    depends_on:
+      - mongodb
+    networks:
+      - application
+
+  GUI:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./GUI
+    image: gui
+    ports:
+      - "8501:8501"
+    environment:
+      HOST: "172.16.55.81"
+    container_name: GUI
+    depends_on:
+      - dataBaseAction
+      - aiAction
+    networks:
+      - application
+
+  aiAction:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./aiActions
+    image: ai_actions
+    ports:
+      - "8001:8001"
+    environment:
+      HOST: "172.16.55.81"
+    container_name: aiAction
+    depends_on:
+      - dataBaseAction
+    networks:
+      - application
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+    networks:
+      - application
+
+volumes:
+  dbdata6:
+
+networks:
+  application:
