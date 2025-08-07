@@ -62,9 +62,6 @@ def uploadCroppedImages(croppedImage,uncroppedImage,userId,emotionIndex):
     with httpx.Client() as client:
         client.post(url, json = {"croppedImage":croppedImage.tolist(),"uncroppedImage":uncroppedImage.tolist(),"userId":userId,"emotionIndex":str(emotionIndex)})
 
-
-
-
 async def send_labeled_image_thread(croppedImage,uncroppedImage,userId):
     loop = asyncio.get_running_loop()
     await loop.run_in_executor(executor2, uploadCroppedImages, croppedImage, uncroppedImage,userId)
@@ -166,5 +163,3 @@ async def prelucrareVideo(video: UploadFile = File(...),userId: str = Form(...),
         asyncio.create_task(process_video_in_thread(video,video_id,userId))
 
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8001)
